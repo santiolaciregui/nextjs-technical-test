@@ -1,35 +1,56 @@
-# ShipFast — Typescript
+# Technical Test - Search and Pagination
 
-Hey maker 👋 it's Marc from [ShipFast](https://shipfa.st/docs). Let's get your startup off the ground, FAST ⚡️
+Este proyecto es una prueba técnica para evaluar habilidades con **Next.js 14**, **Server Actions**, y **Supabase**.
 
-<sub>**Watch/Star the repo to be notified when updates are pushed**</sub>
+## Requisitos
 
-## Get Started
+1. **Búsqueda:**
+   - Implementar una barra de búsqueda funcional.
+   - Sincronizar el estado de búsqueda con los parámetros de la URL.
 
-1. Follow the [Get Started Tutorial](https://shipfa.st/docs) to clone the repo and run your local server 💻
+2. **Paginación:**
+   - Mostrar 5 productos por página.
+   - Sincronizar la página actual con los parámetros de la URL.
 
-<sub>**Looking for the /pages router version?** Use this [documentation](https://shipfa.st/docs-old) instead</sub>
+3. **Fetching de datos:**
+   - Obtener los datos desde una tabla en Supabase.
+   - Usar Server Actions para manejar el fetching.
 
-2. Follow the [Ship In 5 Minutes Tutorial](https://shipfa.st/docs/tutorials/ship-in-5-minutes) to learn the foundation and ship your app quickly ⚡️
+4. **Diseño:**
+   - Utilizar DaisyUI para estilizar la barra de búsqueda, tabla y paginación.
 
-## Links
+## Configuración
 
--   [📚 Documentation](https://shipfa.st/docs)
--   [📣 Updates](https://shipfast.beehiiv.com/)
--   [🧑‍💻 Discord](https://shipfa.st/dashboard)
--   [🥇 Leaderboard](https://shipfa.st/leaderboard)
+1. **Base de datos en Supabase**:
+   - Utilizar la tabla `products` que contiene la siguiente estructura:
+     ```sql
+     CREATE TABLE products (
+         id SERIAL PRIMARY KEY,
+         name TEXT NOT NULL,
+         description TEXT NOT NULL,
+         price NUMERIC NOT NULL
+     );
+     ```
 
-## Support
+2. **Variables de entorno**:
+   - Configura `.env.local` con las claves de Supabase:
+     ```
+     NEXT_PUBLIC_SUPABASE_URL=<tu-url>
+     NEXT_PUBLIC_SUPABASE_ANON_KEY=<tu-clave>
+     ```
 
-Reach out to me on [Twitter](https://twitter.com/marc_louvion) or marc@shipfa.st
+3. **Inicio del proyecto**:
+   - Clona el repositorio.
+   - Instala las dependencias:
+     ```bash
+     npm install
+     ```
+   - Inicia el servidor de desarrollo:
+     ```bash
+     npm run dev
+     ```
 
-\_
+## Entregables
 
-Let's ship it, FAST ⚡️
-
-P.S.
-
--   Want to showcase your startups? Get your [Indie Page](https://indiepa.ge?ref=shipfast_readme) and share your entrepreneur's journey. Join 3,132 founders ⭐️
--   Don't get banned from Stripe for 1 dispute. Use [ByeDispute](https://byedispute.com/?ref=shipfast_readme) to prevent them from happenening 🛡️
--   Make your launch go viral and get your first customers with [LaunchViral](https://launchvir.al/?ref=shipfast_readme) 🚀
--   Stop paying 0.4% per Stripe invoices [Zenvoice](https://zenvoice.io/?ref=shipfast_readme) 🤕
+1. Implementa toda la funcionalidad solicitada.
+2. Envía tu solución como un pull request.

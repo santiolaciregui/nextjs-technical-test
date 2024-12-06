@@ -1,45 +1,137 @@
-import Link from "next/link";
-import ButtonSignin from "@/components/ButtonSignin";
+"use client";
+
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+  const router = useRouter();
+
+  const navigateToDashboard = () => {
+    router.push("/dashboard");
+  };
+
   return (
-    <>
-      <header className="p-4 flex justify-end max-w-7xl mx-auto">
-        <ButtonSignin text="Login" />
-      </header>
-      <main>
-        <section className="flex flex-col items-center justify-center text-center gap-12 px-8 py-24">
-          <h1 className="text-3xl font-extrabold">Ship Fast ⚡️</h1>
-
-          <p className="text-lg opacity-80">
-            The start of your new startup... What are you gonna build?
+    <main className="bg-gradient-to-b from-indigo-50 to-white h-screen flex flex-col">
+      {/* Header */}
+      <header className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-8 shadow-lg">
+        <div className="container mx-auto text-center">
+          <h1 className="text-5xl font-extrabold tracking-wide">
+            AmazonCx Technical Test
+          </h1>
+          <p className="mt-4 text-xl font-light">
+            Showcase your skills with <strong>Next.js 14</strong>, <strong>DaisyUI</strong>, and database fetching.
           </p>
+        </div>
+      </header>
 
-          <a
-            className="btn btn-primary"
-            href="https://shipfa.st/docs"
-            target="_blank"
+      {/* Content */}
+      <section className="container mx-auto px-8 py-8 bg-white rounded-lg shadow-lg mt-10">
+        <h2 className="text-3xl font-bold mb-6 text-indigo-700 text-center">
+          Your Challenge
+        </h2>
+        <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
+          Implement a <strong>Search Bar</strong> in the dashboard that fetches data from a pre-configured Supabase database. The search should allow users to filter results efficiently and offer features that make the application more user-friendly and flexible.
+        </p>
+
+        {/* Project Configuration */}
+        <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+          <h3 className="text-2xl font-semibold text-indigo-600 mb-4">
+            Project Configuration
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            <li>
+              The Supabase table <strong>already exists</strong>, so you don't need to create it.
+            </li>
+            <li>
+              The database contains a table named <strong>products</strong>, with columns:
+              <ul className="list-inside list-square ml-6 mt-2">
+                <li><strong>id</strong> (integer, primary key)</li>
+                <li><strong>name</strong> (string)</li>
+                <li><strong>description</strong> (string)</li>
+                <li><strong>price</strong> (float)</li>
+              </ul>
+            </li>
+            <li>
+              The project is pre-configured with <strong>Tailwind CSS</strong>, <strong>DaisyUI</strong>, and a <strong>Supabase client</strong>.
+            </li>
+          </ul>
+        </div>
+
+        {/* Expectations */}
+        <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+          <h3 className="text-2xl font-semibold text-indigo-600 mb-4">
+            Expectations for the Search Bar
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            <li>
+              The application should allow users to filter the results efficiently and dynamically update based on the search criteria.
+            </li>
+            <li>
+              URLs should be shareable and bookmarkable. This ensures users can revisit the same search results or share their filters with others.
+            </li>
+            <li>
+              The search functionality should integrate seamlessly between client and server, ensuring the initial state is rendered appropriately.
+            </li>
+          </ul>
+        </div>
+
+        {/* Submission Instructions */}
+        <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+          <h3 className="text-2xl font-semibold text-indigo-600 mb-4">
+            How to Submit Your Solution
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            <li>
+              Create a <strong>Pull Request</strong> in the GitHub repository where this project is hosted.
+            </li>
+            <li>
+              Record a short video using <strong>Loom</strong> or a similar tool, explaining your implementation. Highlight:
+              <ul className="list-inside list-square ml-6 mt-2">
+                <li>The architecture of your solution.</li>
+                <li>How the search bar works, including URL synchronization.</li>
+                <li>Any decisions you made regarding optimization or usability.</li>
+              </ul>
+            </li>
+            <li>
+              Include the Loom link in your Pull Request description.
+            </li>
+          </ul>
+          <p className="text-gray-600 text-sm mt-4">
+            Please ensure your code is clean and well-documented. We’re evaluating not only the functionality but also the quality of your implementation.
+          </p>
+        </div>
+
+        {/* Button */}
+        <div className="text-center">
+          <button
+            onClick={navigateToDashboard}
+            className="btn btn-primary px-10 py-3 text-lg font-semibold rounded-lg shadow-md"
           >
-            Documentation & tutorials{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
+            Go to Dashboard
+          </button>
+        </div>
+      </section>
 
-          <Link href="/blog" className="link link-hover text-sm">
-            Fancy a blog?
-          </Link>
-        </section>
-      </main>
-    </>
+      {/* Footer */}
+      <footer className="bg-gray-200 text-gray-600 py-6 mt-auto text-center">
+        <p>
+          Questions? Check the{" "}
+          <a
+            href="https://nextjs.org/docs"
+            target="_blank"
+            className="text-indigo-600 underline"
+          >
+            Next.js Documentation
+          </a>{" "}
+          or{" "}
+          <a
+            href="https://supabase.com/docs"
+            target="_blank"
+            className="text-indigo-600 underline"
+          >
+            Supabase Documentation
+          </a>.
+        </p>
+      </footer>
+    </main>
   );
 }
