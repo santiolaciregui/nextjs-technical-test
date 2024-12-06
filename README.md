@@ -24,7 +24,7 @@ Este proyecto es una prueba técnica para evaluar habilidades con **Next.js 14**
 1. **Base de datos en Supabase**:
    - Utilizar la tabla `products` que contiene la siguiente estructura:
      ```sql
-     CREATE TABLE products (
+     products (
          id SERIAL PRIMARY KEY,
          name TEXT NOT NULL,
          description TEXT NOT NULL,
