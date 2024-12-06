@@ -8,7 +8,7 @@ export default async function Dashboard() {
           🛠️ Implement your solution here! 🚀
         </h1>
         <p className="text-lg text-gray-600 text-center">
-          This is where you can implement the search bar for the technical test. 
+          This is where you can implement the search bar and pagination for the technical test. 
           Make it efficient, shareable, and user-friendly!
         </p>
         <p className="text-center text-sm text-gray-500 italic">

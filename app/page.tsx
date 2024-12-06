@@ -24,12 +24,12 @@ export default function Page() {
       </header>
 
       {/* Content */}
-      <section className="container mx-auto px-8 py-8 bg-white rounded-lg shadow-lg mt-10">
+      <section className="container mx-auto px-8 py-8 bg-white rounded-lg shadow-lg my-10">
         <h2 className="text-3xl font-bold mb-6 text-indigo-700 text-center">
           Your Challenge
         </h2>
         <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
-          Implement a <strong>Search Bar</strong> in the dashboard that fetches data from a pre-configured Supabase database. The search should allow users to filter results efficiently and offer features that make the application more user-friendly and flexible.
+          Implement a <strong>Search Bar and pagination</strong> in the dashboard that fetches data from a pre-configured Supabase database. The search should allow users to filter results efficiently and offer features that make the application more user-friendly and flexible.
         </p>
 
         {/* Project Configuration */}
@@ -59,7 +59,7 @@ export default function Page() {
         {/* Expectations */}
         <div className="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
           <h3 className="text-2xl font-semibold text-indigo-600 mb-4">
-            Expectations for the Search Bar
+            Expectations for the Search Bar and Pagination
           </h3>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
             <li>
@@ -70,6 +70,12 @@ export default function Page() {
             </li>
             <li>
               The search functionality should integrate seamlessly between client and server, ensuring the initial state is rendered appropriately.
+            </li>
+            <li>
+              Pagination must display <strong>5 results per page</strong> and allow users to navigate between pages using "Previous" and "Next" buttons.
+            </li>
+            <li>
+              Pagination state must also be synchronized with the URL (e.g., <code>?page=2</code>).
             </li>
           </ul>
         </div>
@@ -88,6 +94,7 @@ export default function Page() {
               <ul className="list-inside list-square ml-6 mt-2">
                 <li>The architecture of your solution.</li>
                 <li>How the search bar works, including URL synchronization.</li>
+                <li>How pagination interacts with the search functionality.</li>
                 <li>Any decisions you made regarding optimization or usability.</li>
               </ul>
             </li>

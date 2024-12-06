@@ -33,7 +33,7 @@ Este proyecto es una prueba técnica para evaluar habilidades con **Next.js 14**
      ```
 
 2. **Variables de entorno**:
-   - Configura `.env.local` con las claves de Supabase:
+   - Copia el archivo `.env` en tu `.env.local` con las claves de Supabase:
      ```
      NEXT_PUBLIC_SUPABASE_URL=<tu-url>
      NEXT_PUBLIC_SUPABASE_ANON_KEY=<tu-clave>
